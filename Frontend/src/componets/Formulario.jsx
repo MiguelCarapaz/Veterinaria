@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthProvider";
 import axios from "axios";
 import Mensaje from "./Alertas/Mensaje";
+import Swal from "sweetalert2";
 
 export const Formulario = ({ paciente }) => {
   const { auth } = useContext(AuthContext);
@@ -42,6 +43,13 @@ export const Formulario = ({ paciente }) => {
           Authorization: `Bearer ${token}`,
         },
       };
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Paciente actualizado",
+        showConfirmButton: false,
+        timer: 2000,
+      });
       await axios.put(url, form, options);
       navigate("/dashboard/listar");
     } else {
@@ -55,6 +63,13 @@ export const Formulario = ({ paciente }) => {
             Authorization: `Bearer ${token}`,
           },
         };
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Paciente registrado",
+          showConfirmButton: false,
+          timer: 2000,
+        });
         await axios.post(url, form, options);
         navigate("/dashboard/listar");
         delete form.id

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthProvider";
 import Mensaje from "../Alertas/Mensaje";
+import Swal from "sweetalert2";
 const FormularioPerfil = () => {
   const { auth, actualizarPerfil } = useContext(AuthContext);
    const [mensaje, setMensaje] = useState({});
@@ -19,6 +20,13 @@ const FormularioPerfil = () => {
      }
      const resultado = await actualizarPerfil(form);
      setMensaje(resultado);
+     Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Información actualizada",
+      showConfirmButton: false,
+      timer: 2000,
+    });
      setTimeout(() => {
        setMensaje({});
     }, 3000);
@@ -107,7 +115,7 @@ const FormularioPerfil = () => {
         </label>
         <input
           id="ditelefonoreccion"
-          type="text"
+          type="number"
           className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5"
           placeholder="telefono"
           name="telefono"
