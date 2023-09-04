@@ -1,9 +1,15 @@
 import { useContext, useState, useEffect } from "react";
 import AuthContext from "../../context/AuthProvider";
 import Mensaje from "../Alertas/Mensaje";
+<<<<<<< HEAD
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
 import Cookies from "js-cookie";
+=======
+import { useFormik } from "formik";
+import Cookies from "js-cookie";
+
+>>>>>>> 928892c3eeead7a49fdad38e22bc050531ab625d
 const FormularioPerfil = () => {
   const { auth, actualizarPerfil } = useContext(AuthContext);
   const [mensaje, setMensaje] = useState({});
@@ -66,6 +72,7 @@ const FormularioPerfil = () => {
 
       const resultado = await actualizarPerfil(values);
       setMensaje(resultado);
+<<<<<<< HEAD
            Swal.fire({
       position: "center",
       icon: "success",
@@ -73,6 +80,8 @@ const FormularioPerfil = () => {
       showConfirmButton: false,
       timer: 2000,
     });
+=======
+>>>>>>> 928892c3eeead7a49fdad38e22bc050531ab625d
       setTimeout(() => {
         setMensaje({});
       }, 3000);

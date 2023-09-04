@@ -18,7 +18,10 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.1",
+<<<<<<< HEAD
     "sweetalert2": "^11.6.13",
+=======
+>>>>>>> 928892c3eeead7a49fdad38e22bc050531ab625d
     "yup": "^1.2.0"
   },
   "devDependencies": {

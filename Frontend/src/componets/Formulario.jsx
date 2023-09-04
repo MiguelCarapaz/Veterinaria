@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthProvider';
 import axios from 'axios';
 import Mensaje from './Alertas/Mensaje';
+<<<<<<< HEAD
 import Swal from "sweetalert2";
+=======
+>>>>>>> 928892c3eeead7a49fdad38e22bc050531ab625d
 
 export const Formulario = ({ paciente }) => {
   const { auth } = useContext(AuthContext);
@@ -62,6 +65,7 @@ export const Formulario = ({ paciente }) => {
                 Authorization: `Bearer ${token}`,
               },
             };
+<<<<<<< HEAD
           Swal.fire({
             position: "center",
             icon: "success",
@@ -69,6 +73,8 @@ export const Formulario = ({ paciente }) => {
             showConfirmButton: false,
             timer: 2000,
           });
+=======
+>>>>>>> 928892c3eeead7a49fdad38e22bc050531ab625d
             await axios.put(url, values, options);
           } else {
             const url = `${import.meta.env.VITE_BACKEND_URL}/paciente/registro`;
@@ -78,6 +84,7 @@ export const Formulario = ({ paciente }) => {
                 Authorization: `Bearer ${token}`,
               },
             };
+<<<<<<< HEAD
             
             Swal.fire({
               position: "center",
@@ -87,6 +94,8 @@ export const Formulario = ({ paciente }) => {
               timer: 2000,
             });
             
+=======
+>>>>>>> 928892c3eeead7a49fdad38e22bc050531ab625d
             await axios.post(url, values, options);
           }
 
