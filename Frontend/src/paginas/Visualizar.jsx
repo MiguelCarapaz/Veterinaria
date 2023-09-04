@@ -37,7 +37,14 @@ const Visualizar = () => {
     };
     consultarPaciente();
   }, []);
-
+ // Función para dividir el texto en líneas de 60 caracteres
+ const dividirTextoEnLineas = (texto) => {
+  const lineas = [];
+  for (let i = 0; i < texto.length; i += 50) {
+    lineas.push(texto.slice(i, i + 50));
+  }
+  return lineas.join('\n'); // Agregar saltos de línea
+};
   return (
     <>
       <div>
@@ -95,7 +102,7 @@ const Visualizar = () => {
                 <span className="text-gray-600 uppercase font-bold">
                   * Síntomas:{" "}
                 </span>
-                {paciente.sintomas}
+                <pre>{dividirTextoEnLineas(paciente.sintomas)}</pre>
               </p>
             </div>
             <div>
