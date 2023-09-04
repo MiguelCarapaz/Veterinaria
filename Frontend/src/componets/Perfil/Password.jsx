@@ -2,6 +2,7 @@ import { useState } from "react";
 import Mensaje from "../Alertas/Mensaje";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthProvider";
+import Swal from "sweetalert2";
 const Password = () => {
     const { actualizarPassword } = useContext(AuthContext);
 
@@ -43,6 +44,13 @@ const Password = () => {
 
     const resultado = await actualizarPassword(form);
     setMensaje(resultado);
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Contraseña actualizada",
+      showConfirmButton: false,
+      timer: 2000,
+    });
     setTimeout(() => {
       setMensaje({});
     }, 3000);

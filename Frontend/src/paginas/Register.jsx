@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Mensaje from "../componets/Alertas/Mensaje";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const Register = () => {
   const [mensaje, setMensaje] = useState({});
@@ -24,6 +25,13 @@ export const Register = () => {
       const url = "http://localhost:3000/api/registro";
       const respuesta = await axios.post(url, form);
       setMensaje({ respuesta: respuesta.data.msg, tipo: true });
+      Swal.fire({
+        position: "center",
+        icon: "info",
+        title: "Confirma tu cuenta",
+        showConfirmButton: false,
+        timer: 2000,
+      });
       setform({});
     } catch (error) {
       setMensaje({ respuesta: error.response.data.msg, tipo: false });

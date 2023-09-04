@@ -35,7 +35,7 @@ const Dashboard = () => {
               to="/dashboard"
               className={`${
                 urlActual === "/dashboard"
-                  ? "text-slate-200 bg-gray-900 px-3 py-2 rounded-md text-center"
+                  ? "text-slate-200 bg-blue-500 px-3 py-2 rounded-md text-center"
                   : "text-slate-600"
               } text-xl block mt-2 hover:text-slate-600`}
             >
@@ -48,9 +48,10 @@ const Dashboard = () => {
               to="/dashboard/listar"
               className={`${
                 urlActual === "/dashboard/listar"
-                  ? "text-slate-200 bg-gray-900 px-3 py-2 rounded-md text-center"
+                  ? "text-white bg-blue-500 px-3 py-2 rounded-md text-center"
                   : "text-slate-600"
               } text-xl block mt-2 hover:text-slate-600`}
+
             >
               Listar
             </Link>
@@ -61,7 +62,7 @@ const Dashboard = () => {
               to="/dashboard/crear"
               className={`${
                 urlActual === "/dashboard/crear"
-                  ? "text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center"
+                  ? "text-slate-100 bg-blue-500 px-3 py-2 rounded-md text-center"
                   : "text-slate-600"
               } text-xl block mt-2 hover:text-slate-600`}
             >
